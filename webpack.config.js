@@ -13,7 +13,17 @@ module.exports = {
 				loader: 'babel-loader',
 				test: /\.js$/,
 				exclude: /node_modules/,
-			}
+			},
+			{
+		        test: /\.css$/,
+		        use: [ 'style-loader', 'css-loader' ]
+		    },
+		    {
+		        test: /\.(png|jp(e*)g|svg)$/,
+		        use: [{
+		        	loader: 'url-loader',
+		        }]
+		      }
 		]
 	},
 	devServer: {
